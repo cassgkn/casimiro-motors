@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="./main.css">
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> <!--cdn slick, pluging para o carrocel do jQuery-->
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/><!--cdn slick, pluging para o carrocel do jQuery-->
+</head>
 <body>
     <header>
         <div class="container container-flex">
@@ -28,7 +29,7 @@
                         <a href="#">Sobre</a>
                     </li>
                     <li>
-                        <a href="#">Em Destaques</a>
+                        <a href="#">Show Room</a>
                     </li>
                     <li>
                         <a href="#">Promoções</a>
@@ -45,7 +46,7 @@
         <img src="./images/slide2.png" alt="imagem do carro BMW">
         <img src="./images/slide3.png" alt="imagem do corro Ford GT">
     </div> 
-    <section id="sobre-a-loja">
+    <section id="sobre">
         <div class="container container-flex">
             <img src="./images/loja.jpg" alt="imagem da loja ebac motors">
             <div>
@@ -64,9 +65,9 @@
         </div>
     </section>
 
-    <section>
+    <section id="show-room">
         <div class="container">
-            <h2>Em destaque</h2>
+            <h2>Show Room</h2>
             <ul class="container-flex lista-veiculos">
                 <li>
                     <img src="./images/carro-bmw.png" alt="">
@@ -117,7 +118,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="promocoes">
         <div class="container">
             <h2>Promoções</h2>
             <ul class="container-flex lista-veiculos">
@@ -191,23 +192,23 @@
             <form>
                 <div class="form-campo">
                     <label for="nome">Nome:</label>
-                    <input type="text" id="nome" placeholder="Seu nome">
+                    <input type="text" id="nome" placeholder="Seu nome" name="nome">
                 </div>
                 <div class="form-campo">
                     <label for="telefone">Telefone:</label>
-                    <input type="tel" id="telefone" placeholder="Seu Telefone">
+                    <input type="tel" id="telefone" placeholder="Seu Telefone" name="telefone">
                 </div>
                 <div class="form-campo">
                     <label for="email">E-mail:</label>
-                    <input type="email" id="email" placeholder="Seu email">
+                    <input type="email" id="email" placeholder="Seu email" name="email">
                 </div>
                 <div class="form-campo">
                     <label for="veiculo-interesse">Veiculo de interesse:</label>
-                    <input type="text" id="veiculo-de-interesse" placeholder="Seu veículo de interesse">
+                    <input type="text" id="veiculo-de-interesse" placeholder="Seu veículo de interesse" name="veiculoDeInteresse">
                 </div>
                 <div class="form-campo">
                     <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem"></textarea>
+                    <textarea id="mensagem" name="mensagem"></textarea>
                 </div>
                 <button type="submit">Enviar</button>
             </form>
@@ -216,7 +217,7 @@
     <footer>
         <div class="container container-flex">
             <p>
-                2022 &copy; Casimiro Motors - Todos os Direitos Reservados
+                2022 &copy; Casimiro Motors - Direitos Reservados
             </p>
             <ul class="container-flex">
                 <li>
@@ -241,17 +242,66 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> <!--jQuery-->
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> <!--cdn slick, pluging para o carrocel do jQuery-->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> <!--cdn slick, pluging para o carrocel do jQuery-->
-    
+    <script src="./js/jquery.mask.min.js"></script>
+    <script src="./js/jquery.validate.min.js"></script>
+    <script src="./js/messages_pt_BR.min.js"></script>
     <script> 
+        //ativa o carousel do plugin slick
         $(document).ready(function(){
             $('#carousel-imagens').slick({
-                autoplay:true,
+                autoplay: true,
             });
 
+            //ativa rolagem para baixo do menu hamburguer
             $('.menu-hamburguer').click(function(){
                 $('nav').slideToggle()
             });
+
+            //ativa o a máscara ou formato do telefone atraves do plugin jquery mask
+            $('#telefone').mask('(00) 00000-0000')
+
+            //valida formulario, cria a obrigatoriedade de preenchimento atraves do plugin jquery validate
+            $('form').validate({
+                rules: {
+                    nome: {
+                        required: true,
+                    },
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    telefone: {
+                        required: true
+                    },
+                    mensagem: {
+                        required: true,
+                    },
+                    veiculoDeInteresse: {
+                        required: false,
+                    }
+                },
+
+                //customiza a mensagem do plugin jquery messages
+                messages: {
+                    nome: 'Por favor, insira seu nome completo',
+                    telefone: 'Por favor, insira seu telefone',
+                    email: 'Por favor, insira seu email corretamente',
+                    veiculoDeInteresse: 'Por favor, insira seu veículo de interesse',
+                    mensagem: 'Por favor, insira uma mensagem ao vendedor'
+                },
+                submitHandler: function(form) {
+                    console.log(form)
+                },
+
+                //escuta e intercepta apos clicar em botao enviar que existem campos a preencher
+                invalidHandler: function(evento, validador) {
+                    let camposIncorretos = validador.numberOfInvalids();
+                    if (camposIncorretos) {
+                        alert(`Existem ${camposIncorretos} campos incorretos`)
+                    }
+                }
+            })
         })
-    </script><!--função p/ ativar carrocel e menu hamburguer-->
+    </script>
 </body>
 </html>
