@@ -201,6 +201,10 @@ footer li img {
         margin: 0 auto;
     }
 
+    html {
+        overflow-x: hidden
+    }
+
     .container .container-flex {
         display: inline;
     }
