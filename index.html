@@ -42,6 +42,14 @@
         </nav>
     </header>
     <div id="carousel-imagens">
+        <div class="porche">
+            <img src="./images/911_carro.png" alt="">
+           <div class="descricao">
+            <h3>Porche 911</h3>
+            <h3>TURBO S</h3>
+            <h3>CABRIOLET</h3>
+           </div>
+        </div>
         <img src="./images/slide1.png" alt="imagem do carro Porche">
         <img src="./images/slide2.png" alt="imagem do carro BMW">
         <img src="./images/slide3.png" alt="imagem do corro Ford GT">
@@ -186,7 +194,7 @@
         </div>
     </section>
 
-    <section>
+    <section id="contato">
         <div class="container">
             <h2>Entre em Contato</h2>
             <form>
@@ -242,66 +250,9 @@
     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script> <!--jQuery-->
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> <!--cdn slick, pluging para o carrocel do jQuery-->
     <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> <!--cdn slick, pluging para o carrocel do jQuery-->
-    <script src="./js/jquery.mask.min.js"></script>
+    <script src="./js/jquery.mask.min.js"></script> <!--ativa mascara p/ telefone (--) ****-****-->
     <script src="./js/jquery.validate.min.js"></script>
     <script src="./js/messages_pt_BR.min.js"></script>
-    <script> 
-        //ativa o carousel do plugin slick
-        $(document).ready(function(){
-            $('#carousel-imagens').slick({
-                autoplay: true,
-            });
-
-            //ativa rolagem para baixo do menu hamburguer
-            $('.menu-hamburguer').click(function(){
-                $('nav').slideToggle()
-            });
-
-            //ativa o a máscara ou formato do telefone atraves do plugin jquery mask
-            $('#telefone').mask('(00) 00000-0000')
-
-            //valida formulario, cria a obrigatoriedade de preenchimento atraves do plugin jquery validate
-            $('form').validate({
-                rules: {
-                    nome: {
-                        required: true,
-                    },
-                    email: {
-                        required: true,
-                        email: true
-                    },
-                    telefone: {
-                        required: true
-                    },
-                    mensagem: {
-                        required: true,
-                    },
-                    veiculoDeInteresse: {
-                        required: false,
-                    }
-                },
-
-                //customiza a mensagem do plugin jquery messages
-                messages: {
-                    nome: 'Por favor, insira seu nome completo',
-                    telefone: 'Por favor, insira seu telefone',
-                    email: 'Por favor, insira seu email corretamente',
-                    veiculoDeInteresse: 'Por favor, insira seu veículo de interesse',
-                    mensagem: 'Por favor, insira uma mensagem ao vendedor'
-                },
-                submitHandler: function(form) {
-                    console.log(form)
-                },
-
-                //escuta e intercepta apos clicar em botao enviar que existem campos a preencher
-                invalidHandler: function(evento, validador) {
-                    let camposIncorretos = validador.numberOfInvalids();
-                    if (camposIncorretos) {
-                        alert(`Existem ${camposIncorretos} campos incorretos`)
-                    }
-                }
-            })
-        })
-    </script>
+    <script src="./js/main.js"></script>
 </body>
 </html>

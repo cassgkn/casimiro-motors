@@ -84,6 +84,24 @@ nav li a:hover {
     box-shadow: 1px 1px 15px; 
 }
 
+#carousel-imagens .porche {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: #9c9898;
+ height: 400px;
+}
+
+.descricao {
+    display: block;
+    font-weight: bold;
+    color: #fff;
+    font-size: 40px;
+    text-decoration: underline  #ff2706;
+    text-shadow: 1px 1px 1px #ff0101;
+}
+
+
 section {
     padding: 16px 0;
 }
@@ -236,6 +254,15 @@ footer li img {
     #carousel-imagens img {
         height: 150px;
     }
+
+    #carousel-imagens .porche {
+        height: 150px;
+}
+    .descricao {
+        font-size: 10px;
+        text-shadow: none;
+        text-decoration: underline  #f5f1f1;
+}
 
     #sobre img{ 
         height: 150px;
