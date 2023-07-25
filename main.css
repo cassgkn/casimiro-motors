@@ -94,6 +94,7 @@ nav li a:hover {
     margin-right: 24px; 
     border-radius: 5px;
     border: none;
+    opacity: .8;
 }
 
 #sobre h2 {
