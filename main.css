@@ -85,6 +85,14 @@ nav li a:hover {
     border: none;
 }
 
+#sobre h2 {
+    text-decoration: underline;
+}
+
+#sobre .p-sobre {
+    text-align: justify;
+}
+
 #carousel-imagens .porche {
  display: flex;
  align-items: center;
@@ -327,6 +335,15 @@ footer li img {
         margin-left: 120px;
         margin-top: 20px;
     }
+
+    #sobre h2 {
+        text-decoration: underline;
+    }
+    
+    #sobre .p-sobre {
+        text-align: justify;
+    }
+    
     #sobre .container-flex {
         display: block;
     }
