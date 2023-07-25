@@ -79,16 +79,18 @@ nav li a:hover {
 
 #sobre img{
     width: 400px;
+    height: 330px;
     margin-right: 24px; 
     border-radius: 5px;
-    box-shadow: 1px 1px 15px; 
+    border: none;
 }
 
 #carousel-imagens .porche {
  display: flex;
  align-items: center;
  justify-content: center;
- background-color: #9c9898;
+ background-color: #b35550;
+ background-image: linear-gradient(135deg, #b35550 0%, #787885 50%, #b35550 100%);
  height: 400px;
 }
 
@@ -97,8 +99,38 @@ nav li a:hover {
     font-weight: bold;
     color: #fff;
     font-size: 40px;
-    text-decoration: underline  #ff2706;
-    text-shadow: 1px 1px 1px #ff0101;
+    text-decoration: underline  #ceced0;
+    text-shadow: 1px 1px 1px #000000;
+}
+
+#carousel-imagens .mclaren {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: #f3f1f1;
+ background-image: linear-gradient(135deg, #f1d992 0%, #787885 50%, #f1d992 100%);
+ height: 400px;
+ padding-top: 30px;
+}
+
+#carousel-imagens .mclaren img {
+    height: 450px;
+    border: transparent;
+}
+
+#carousel-imagens .tesla {
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ background-color: #f3f1f1;
+ background-image: linear-gradient(135deg, #ffffff 0%, #787885 50%, #ffffff 100%);
+ height: 400px;
+ padding-top: 30px;
+}
+
+#carousel-imagens .tesla img {
+    height: 380px;
+    border: transparent;
 }
 
 
@@ -106,8 +138,13 @@ section {
     padding: 16px 0;
 }
 
-section h2 {
+section h2, h4 {
+    text-align: left;
     margin-bottom: 16px;
+}
+
+section .p-sobre {
+    margin: 10px;
 }
 
 .lista-veiculos {
@@ -126,6 +163,7 @@ section h2 {
 
 .lista-veiculos li img {
     max-width: 100%;
+    border-radius: 5px;
 }
 
 .item-central {
@@ -259,31 +297,55 @@ footer li img {
         height: 150px;
 }
 
-#carousel-imagens .porche img {
-    height: 220px;
+    #carousel-imagens .porche img {
+        height: 220px;
+}
+    #carousel-imagens .mclaren {
+        height: 150px;
+}
+
+    #carousel-imagens .mclaren img {
+        height: 180px;
+        padding-bottom: 10px;
+}
+
+    #carousel-imagens .tesla {
+        height: 150px;
+}
+
+    #carousel-imagens .tesla img {
+        height: 150px;
+        padding-bottom: 10px;
 }
 
     .descricao {
         font-size: 10px;
-        text-shadow: none;
-        text-decoration: underline  #f5f1f1;
+        text-decoration: underline  #ceced0;
+        text-shadow: 1px 1px 1px #000000;
 }
 
     #sobre img{ 
         height: 150px;
-        width: 100%;
+        width: 150px;
         border-radius: 5px;
-        box-shadow: 1px 1px 15px; 
+        box-shadow: none; 
+        margin-left: 120px;
+        margin-top: 20px;
     }
     #sobre .container-flex {
         display: block;
     }
 
-    h2 {
+    section h2 {
         text-align: center;
         margin: 7px;
         text-decoration: underline;
     }
+
+    section h4 {
+    text-align: center;
+    margin: 10px ;
+}
 
     p {
         margin: 10px;
@@ -312,7 +374,7 @@ footer li img {
         margin: 5px 0px;
     }
     
-    .lista-veiculos li img {
+   li img {
         max-width: 100%;
         border-radius: 5px;
     }
