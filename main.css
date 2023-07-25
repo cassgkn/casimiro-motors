@@ -288,20 +288,15 @@ footer li img {
         padding-right: 7px;
     }
 
-
-    #carousel-imagens img {
-        height: 150px;
-    }
-
     #carousel-imagens .porche {
-        height: 150px;
+        height: 250px;
 }
 
     #carousel-imagens .porche img {
         height: 200px;
 }
     #carousel-imagens .mclaren {
-        height: 150px;
+        height: 250px;
 }
 
     #carousel-imagens .mclaren img {
@@ -310,7 +305,7 @@ footer li img {
 }
 
     #carousel-imagens .tesla {
-        height: 150px;
+        height: 250px;
 }
 
     #carousel-imagens .tesla img {
