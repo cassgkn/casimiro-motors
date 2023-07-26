@@ -266,6 +266,10 @@ form button {
     max-width: 120px;
 }
 
+button:hover {
+    color: #000;
+}
+
 footer li {
     list-style: none;
     margin-left: 16px;
